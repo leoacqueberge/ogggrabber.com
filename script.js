@@ -115,7 +115,9 @@ function setLoading(loading) {
 // Show success result
 function showSuccess(data) {
     resultTitle.textContent = data.title;
-    resultUrl.textContent = data.url;
+    
+    // Make URL clickable
+    resultUrl.innerHTML = `<a href="${data.url}" target="_blank" rel="noopener noreferrer">${data.url}</a>`;
     
     // Set image with error handling
     ogImage.onload = () => {

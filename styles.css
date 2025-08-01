@@ -19,6 +19,14 @@ body {
     padding: 0;
     background: #ffffff;
 }
+
+/* Desktop margin */
+@media screen and (min-width: 768px) {
+    .main-content {
+        margin: 10px;
+        padding: 20px 50px 20px;
+    }
+}
 /* ===== LAYOUT ===== */
 .main-content {
     margin: 0 auto;
@@ -68,7 +76,7 @@ h2 {
 h3 {
     font-size: 0.875rem;
     color: #111111;
-    margin: 30px 0 10px 0;
+    margin: 0;
     line-height: 20px;
 }
 
@@ -123,7 +131,7 @@ form {
     flex-wrap: nowrap;
     align-items: center;
     gap: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     position: relative;
 }
 
@@ -708,14 +716,7 @@ form button:hover {
     font-size: 0.8em;
 }
 
-/* Responsive adjustments for WYSIWYG editor */
-@media (max-width: 768px) {
-    .wysiwyg-editor {
-        min-height: 300px;
-        padding: 16px;
-        font-size: 0.9rem;
-    }
-}
+
 
 .fullscreen-footer {
     padding: 16px 24px;
@@ -794,6 +795,13 @@ form button:hover {
     text-transform: uppercase;
     box-shadow: inset 0px 1px 3px #00000087;
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.paste-btn svg {
+    filter: drop-shadow(0 -1.2px 0 #1F4077);
 }
 
 .paste-btn:hover {
@@ -817,6 +825,13 @@ form button:hover {
     box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.1);
     text-decoration: none;
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.extension-btn svg {
+    filter: drop-shadow(0 -1.2px 0 #000000);
 }
 
 .extension-btn:hover {
@@ -826,11 +841,11 @@ form button:hover {
 
 /* ===== OG IMAGE GRABBER STYLES ===== */
 .result-card {
-    background: #ffffff;
+    background: #F2F2F2;
     border: 1px solid #D0D0D6;
-    border-radius: 8px;
-    padding: 16px;
-    margin-top: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
     animation: fadeInUp 0.3s ease-out;
 }
 
@@ -846,35 +861,46 @@ form button:hover {
 }
 
 .result-header {
-    padding: 0 0 15px 0;
+    padding: 0 0 4px 0;
     text-align: left;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 15px;
+    border-bottom: 1px solid #D0D0D6;
+    margin-bottom: 4px;
 }
 
 .result-title {
     font-size: 0.875rem;
     font-weight: 500;
     color: #111111;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 .result-url {
     font-size: 0.75rem;
     color: #989897;
     word-break: break-all;
+    margin-bottom: 0;
+}
+
+.result-url a {
+    color: #111111;
+    text-decoration: underline;
+}
+
+.result-url a:hover {
+    color: #111111;
+    text-decoration: underline;
 }
 
 .image-container {
     position: relative;
     overflow: hidden;
-    border-radius: 6px;
-    background: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin: 0;
+    border-radius: 5px;
+    background: transparent;
+    box-shadow: none;
+    margin: 10px 0 0 0;
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid #eee;
+    border: none;
 }
 
 .image-container::before {
@@ -889,11 +915,12 @@ form button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    padding: 20px;
+    object-fit: cover;
+    padding: 0;
     box-sizing: border-box;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
+    border-radius: 5px;
 }
 
 .download-btn {
@@ -920,12 +947,7 @@ form button:hover {
     opacity: 1;
 }
 
-/* Show download button by default on mobile */
-@media screen and (max-width: 600px) {
-    .download-btn {
-        opacity: 1;
-    }
-}
+
 
 .error-message {
     text-align: center;
@@ -938,7 +960,7 @@ form button:hover {
 }
 
 /* ===== MOBILE STYLES ===== */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .main-content {
         padding: 20px 20px 20px;
         margin-top: 10px;
@@ -978,6 +1000,24 @@ form button:hover {
     
     .result-card {
         border-radius: 6px;
+    }
+    
+    .download-btn {
+        opacity: 1;
+    }
+    
+    .wysiwyg-editor {
+        min-height: 300px;
+        padding: 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 768px) {
+    .main-content {
+        margin: 10px auto !important;
+        padding: 20px 50px 20px !important;
     }
 }
 
