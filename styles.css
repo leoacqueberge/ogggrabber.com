@@ -220,10 +220,13 @@ form {
     padding: 0 16px;
     border: 1px solid #eee;
     border-radius: 6px;
-    font-size: 0.875rem;
+    font-size: 16px;
     font-family: 'Inter', sans-serif;
     background: #FDFDFC;
     color: #111111;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 form textarea {
