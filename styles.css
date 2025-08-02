@@ -150,7 +150,8 @@ a {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 16px;
+    height: 40px;
+    padding: 0 16px;
     background: linear-gradient(180deg, #333333 0%, #333333 50%, #111111 50%, #111111 100%);
     color: #ffffff;
     border: 0.5px solid #000000;
@@ -198,15 +199,30 @@ a {
 
 form {
     display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 10px;
-    position: relative;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 4px;
 }
 
-form input, form textarea {
-    flex: 1 1 auto;
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-container input {
+    flex: 1;
+    height: 40px;
+    padding: 0 16px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-family: 'Inter', sans-serif;
+    background: #FDFDFC;
+    color: #111111;
+}
+
+form textarea {
     min-width: 0;
     padding: 12px 16px;
     border: 1px solid #eee;
@@ -223,7 +239,7 @@ form textarea {
     line-height: 1.4;
 }
 
-form input:focus, form textarea:focus {
+.search-container input:focus, form textarea:focus {
     outline: none;
     border-color: #2480ED;
 }
@@ -843,16 +859,12 @@ form button:hover {
 }
 
 /* ===== BUTTON CONTAINER ===== */
-.button-container {
-    display: flex;
-    gap: 0;
-    margin-top: 0px;
-    justify-content: flex-end;
-}
+/* Removed - paste button now inline with search */
 
 /* ===== PASTE BUTTON ===== */
 .paste-btn {
-    padding: 8px 16px;
+    height: 40px;
+    padding: 0 16px;
     background: linear-gradient(180deg, #5292F3 0%, #5292F3 50%, #3581F9 50%, #3581F9 100%) !important;
     color: #ffffff !important;
     border: 0.5px solid #113D8A !important;
