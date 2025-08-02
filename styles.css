@@ -94,14 +94,84 @@ a {
 
 .header {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.header-row {
+    display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 30px;
+    justify-content: space-between;
+    gap: 0px;
+}
+
+.title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .header h1 {
     flex: 1;
     margin-bottom: 0;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.header-separator {
+    border: none;
+    height: 0.8px;
+    background: #E5E5E5;
+    margin: 0px 0 10px 0;
+    width: 100%;
+}
+
+.header-extension-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: linear-gradient(180deg, #333333 0%, #333333 50%, #111111 50%, #111111 100%);
+    color: #ffffff;
+    border: 0.5px solid #000000;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    text-shadow: 0 -1.2px 0 #000000;
+    text-transform: uppercase;
+    box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.header-extension-btn:hover {
+    background: linear-gradient(180deg, #444444 0%, #444444 50%, #222222 50%, #222222 100%);
+}
+
+.header-extension-btn svg {
+    filter: drop-shadow(0 -1.2px 0 #000000);
 }
 
 #addToggle {
@@ -777,7 +847,7 @@ form button:hover {
     display: flex;
     gap: 0;
     margin-top: 0px;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 /* ===== PASTE BUTTON ===== */
