@@ -31,6 +31,7 @@ body {
 .main-content {
     margin: 0 auto;
     padding: 70px 100px 70px;
+    padding-bottom: 100px;
     max-width: 550px;
     margin-top: 10px;
 }
@@ -143,7 +144,10 @@ a {
     height: 0.8px;
     background: #E5E5E5;
     margin: 0px 0 10px 0;
-    width: 100%;
+    width: 100vw; /* Changed to full viewport width */
+    position: relative; /* Ensures it takes full width */
+    left: 50%; /* Centers the separator */
+    transform: translateX(-50%); /* Adjusts position to center */
 }
 
 .header-extension-btn {
@@ -922,6 +926,41 @@ form button:hover {
 }
 
 /* ===== OG IMAGE GRABBER STYLES ===== */
+.placeholder-card {
+    background: #F2F2F2;
+    border: 1px solid #D0D0D6;
+    border-radius: 5px;
+    padding: 40px 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.placeholder-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.placeholder-icon {
+    opacity: 0.6;
+}
+
+.placeholder-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #D0D0D6;
+    margin: 0;
+}
+
+.placeholder-description {
+    font-size: 0.875rem;
+    color: #989897;
+    margin: 0;
+    line-height: 1.4;
+    max-width: 300px;
+}
+
 .result-card {
     background: #F2F2F2;
     border: 1px solid #D0D0D6;
@@ -957,7 +996,7 @@ form button:hover {
 }
 
 .result-url {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     color: #989897;
     word-break: break-all;
     margin-bottom: 0;
@@ -1101,6 +1140,26 @@ form button:hover {
         margin: 10px auto !important;
         padding: 20px 50px 20px !important;
     }
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #E5E5E5;
+    background: #ffffff;
+    z-index: 100;
+}
+
+.footer p {
+    font-size: 0.875rem;
+    color: #989897;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
 }
 
 /* ===== SAFARI iOS FIXES ===== */

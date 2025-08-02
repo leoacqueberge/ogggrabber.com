@@ -2,6 +2,7 @@
 const urlForm = document.getElementById('urlForm');
 const urlInput = document.getElementById('urlInput');
 const pasteBtn = document.getElementById('pasteBtn');
+const placeholderCard = document.getElementById('placeholderCard');
 const resultCard = document.getElementById('resultCard');
 const resultTitle = document.getElementById('resultTitle');
 const resultUrl = document.getElementById('resultUrl');
@@ -124,6 +125,7 @@ function showSuccess(data) {
         imageContainer.style.display = 'block';
         errorMessage.style.display = 'none';
         resultCard.style.display = 'block';
+        placeholderCard.style.display = 'none';
     };
     
     ogImage.onerror = () => {
@@ -142,11 +144,13 @@ function showError(message) {
     errorMessage.style.display = 'block';
     imageContainer.style.display = 'none';
     resultCard.style.display = 'block';
+    placeholderCard.style.display = 'none';
 }
 
 // Hide results
 function hideResults() {
     resultCard.style.display = 'none';
+    placeholderCard.style.display = 'none';
 }
 
 // Handle paste
